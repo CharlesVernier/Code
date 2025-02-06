@@ -19,7 +19,7 @@ n0=1
 # Refractive index of the substrate                   
 ns=1
 # Thickness of Gold, nm
-d=2
+d=27
 # Create the source path 
 path= r"\nas\data\nanolego\Charles Vernier\Postdoc\Code\Au_JC_lisse_wavelength_n_k"
 

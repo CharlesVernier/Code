@@ -29,8 +29,8 @@ from scipy.signal import find_peaks
 
 Grandeur_mesurée="Transmittance (%)"
 Titre="Ex_24_avant_etching"
-Date="\\22_01_2025"
-Folder="\\Ex_24_avant_etching"
+Date="\\05_02_2025"
+Folder="\\Sample_45_afer_afm"
 Selection=[]
 
 
@@ -57,6 +57,8 @@ liste_peaks=[]
 for i in range(0,len(big_df.columns),2):
     fig=plt.figure(int(i/2),figsize=[12,12])
     plt.plot(big_df[i],100*big_df[i+1])
+    plt.scatter(big_df[i][np.argmax(big_df[i+1]).item()],max(big_df[i+1]),s=12,color="red",label=("T_max="+str(round(max(big_df[i+1]),3)),"Lambda_max="+str(big_df[i][np.argmax(big_df[i+1]).item()])))
+    plt.legend(fontsize=20)
     # liste_peaks+=(argrelmin(np.array(100*big_df[i+1]),order=600)[0].tolist())
     # plt.scatter(big_df[i][liste_peaks[i]],big_df[i+1][liste_peaks])
     # liste_labels[int(i/2)]=liste_labels[int(i/2)].split("\\")[0]+"_"+liste_labels[int(i/2)].split("\\")[1]

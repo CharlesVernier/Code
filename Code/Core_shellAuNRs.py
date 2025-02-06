@@ -9,13 +9,13 @@ from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
 
-dAu,dAg=20,60
+dAu,dAg=14,0
 dtot=dAu+dAg
 
-LAu,LAg=60,20
+LAu,LAg=70,0
 Ltot=LAu+LAg
 
-nAu,pAu=2,12
+nAu,pAu=1.5,12
 nAg,pAg=6,12
 
 N=dAu+dAg
@@ -63,11 +63,9 @@ if dAg!=0:
                     lyAg+=[y]
                     lzAg+=[z]
     Nombre_dipôles=NAu+NAg
-                
 
 print("Nombre_de_dipôles=",Nombre_dipôles)
 print("aeff=",step*(Nombre_dipôles*3/(4*3.1415))**0.3333)
-
 
 fig1 = plt.figure(1,figsize=[8,18])
 ax = fig1.add_subplot(projection='3d')
@@ -114,7 +112,6 @@ if dAg!=0:
 plt.xlim(-1,dtot+1)
 plt.ylim(-1,dtot+1)
 
-
 plt.show()
 
 fig4=plt.figure(4,figsize=[8,8])
@@ -141,7 +138,7 @@ plt.contour(xx,yy,valeursAu,levels=[0.999999999999],colors="blue")
 if dAg!=0:
     plt.contour(xx,yy,valeursAg,levels=[0.999999999999],colors="red")
 
-plt.xlim(-1,2*dtot+1)
+plt.xlim(-1,Ltot+1)
 plt.ylim(-1,Ltot+1)
 
 plt.show()
